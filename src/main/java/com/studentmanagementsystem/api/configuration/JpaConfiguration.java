@@ -25,9 +25,9 @@ public class JpaConfiguration {
 	    public DataSource dataSource() {
 	        DriverManagerDataSource ds = new DriverManagerDataSource();
 	        ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-	        ds.setUrl("jdbc:mysql://localhost:3306/studentmanagementsystemproject");
-	        ds.setUsername("root");
-	        ds.setPassword("Vijay@204");
+	        ds.setUrl("jdbc:mysql://humworld-humhealth-private-db-rds-dev.cvmya86ssv13.us-east-2.rds.amazonaws.com/student_management_system_project");
+	        ds.setUsername("vijiyakumar");
+	        ds.setPassword("HumVijiyakumar@2026");
 	        return ds;
 	    }
 
