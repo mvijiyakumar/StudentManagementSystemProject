@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping(value = "report")
-@CrossOrigin
+
 public class PDFController {
 	
 	@Autowired
@@ -26,6 +26,7 @@ public class PDFController {
 	 * @param filterDto Filter criteria for retrieving report.
 	 * @author Vijiyakumar
 	 */
+	@CrossOrigin
 	@PostMapping("mark/summary-report")
     public void downloadMarkSummaryReport(@RequestBody MarkFilterDto filterDto,HttpServletResponse response) throws IOException {  
 		pdfService.downloadMarkSummaryReport(filterDto,response);

@@ -18,7 +18,6 @@ import com.studentmanagementsystem.api.service.HolidayService;
 
 @RestController
 @RequestMapping(value = "holidays")
-@CrossOrigin
 public class HolidayController {
 
 	@Autowired
@@ -32,6 +31,7 @@ public class HolidayController {
 	 * @return Confirmation message
 	 * @author Vijiyakumar
 	 */
+	@CrossOrigin
 	@PostMapping("/declare")
 	ResponseEntity<?> declareHolidays(@RequestBody List<SchoolHolidaysDto> schoolHolidaysDto) {
 		return new ResponseEntity<>(schoolHolidaysService.declareHolidays(schoolHolidaysDto), HttpStatus.OK);
@@ -45,6 +45,7 @@ public class HolidayController {
 	 * @return Confirmation message
 	 * @author Vijiyakumar
 	 */
+	@CrossOrigin
 	@PostMapping("/cancel")
 	ResponseEntity<?> cancelHolidays(@RequestBody List<SchoolHolidaysDto> schoolHolidaysDto) {
 		return new ResponseEntity<>(schoolHolidaysService.cancelHolidays(schoolHolidaysDto), HttpStatus.OK);
@@ -57,8 +58,8 @@ public class HolidayController {
 	 * @return Return list of active or canceled declared holidays.
 	 * @author Vijiyakumar
 	 */
-
-	@GetMapping("/list")
+	@CrossOrigin
+	@PostMapping("/list")
 	ResponseEntity<?> listDeclaredHolidays(@RequestBody HolidayFilterDto filterDto ) {
 		return new ResponseEntity<>(schoolHolidaysService.declaredHolidaysList(filterDto), HttpStatus.OK);
 	}

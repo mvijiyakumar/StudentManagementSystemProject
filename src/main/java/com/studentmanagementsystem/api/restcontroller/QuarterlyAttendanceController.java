@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ import com.studentmanagementsystem.api.service.QuarterlyAttendanceService;
 
 @RestController
 @RequestMapping("quarterly")
-@CrossOrigin
+
 public class QuarterlyAttendanceController {
 	
 	@Autowired
@@ -28,7 +29,8 @@ public class QuarterlyAttendanceController {
 	 * @return Return list of quarterli attendance report
 	 * @author Vijiyakumar
 	 */	
-	@GetMapping("/list")
+	@CrossOrigin
+	@PostMapping("/list")
 	ResponseEntity<?> quarterlyAttendanceList(@RequestBody CommonFilterDto filterDto){
 		return new ResponseEntity<>(quarterlyAttendanceReportService.quarterlyAttendanceList(filterDto),HttpStatus.OK);
 	}

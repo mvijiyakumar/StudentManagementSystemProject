@@ -18,7 +18,7 @@ import com.studentmanagementsystem.api.service.MarkService;
 
 @RestController
 @RequestMapping(value = "mark")
-@CrossOrigin
+
 public class MarkController {
 	
 	@Autowired
@@ -31,7 +31,7 @@ public class MarkController {
 	 * @return Confirmation message indicating that the marks were successfully declared
 	 * @author Vijiyakumar
 	 */
-	
+	@CrossOrigin
 	@PostMapping("/save")
 	ResponseEntity<?> saveStudentMarks(@RequestBody List<markDto> markDto){
 		return new ResponseEntity<>(studentMarksService.saveStudentMarks(markDto),HttpStatus.OK);
@@ -44,7 +44,8 @@ public class MarkController {
 	 * @return List of all student marks based on give filter
 	 * @author Vijiyakumar
 	 */	
-	@GetMapping("/list")
+	@CrossOrigin
+	@PostMapping("/list")
 	ResponseEntity<?> listStudentMarks(@RequestBody MarkFilterDto filterDto){
 		return new ResponseEntity<>(studentMarksService.listStudentMarks(filterDto),HttpStatus.OK);
 	}
@@ -56,7 +57,8 @@ public class MarkController {
 	 * @return List of result summary report
 	 * @author Vijiyakumar
 	 */	
-	@GetMapping("/summary-report")
+	@CrossOrigin
+	@PostMapping("/summary-report")
 	ResponseEntity<?> resultSummaryReport(@RequestBody MarkFilterDto filterDto){
 		return new ResponseEntity<>(studentMarksService.resultSummaryReport(filterDto),HttpStatus.OK);
 	}

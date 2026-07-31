@@ -15,7 +15,6 @@ import jakarta.mail.MessagingException;
 @RestController
 
 @RequestMapping(value = "mail")
-@CrossOrigin
 public class EmailSendHistoryController {
 	
 	@Autowired
@@ -30,6 +29,7 @@ public class EmailSendHistoryController {
 	 * @author Vijiyakumar
 	 * @throws MessagingException 
 	 */
+	@CrossOrigin
 	@PostMapping("/quarter-report")
 	ResponseEntity<?> sendQuarterlyResultReport(@RequestParam String quarterAndYear,@RequestParam Integer classOfStudy,@RequestParam Long teacherId) throws MessagingException  {
 		return new ResponseEntity<>(emailSentService.sendQuarterlyAttendanceReport(quarterAndYear,classOfStudy,teacherId),HttpStatus.OK);
@@ -44,6 +44,7 @@ public class EmailSendHistoryController {
 	 * @author Vijiyakumar
 	 * @throws MessagingException 
 	 */
+	@CrossOrigin
 	@PostMapping("/mark-result")
 	ResponseEntity<?> sendMarkReport(@RequestParam String quarterAndYear,@RequestParam Integer classOfStudy,@RequestParam Long teacherId) throws MessagingException {
 		return new ResponseEntity<>(emailSentService.sendQuarterlyMarkResult(quarterAndYear,classOfStudy,teacherId),HttpStatus.OK);
