@@ -41,7 +41,7 @@ public ResponseEntity<?> addStudentCode(@RequestBody List<StudentCodeDto> studen
 }
 
 
-@PostMapping
+@PostMapping(value = "list")
 public ResponseEntity<?> stuCodeList(@RequestParam(required = false) String groupCode){
 	return new ResponseEntity<>(studentCodeService.stuCodeList(groupCode),HttpStatus.OK);
 }
