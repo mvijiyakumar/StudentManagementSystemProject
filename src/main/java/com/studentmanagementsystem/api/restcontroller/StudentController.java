@@ -16,6 +16,7 @@ import com.studentmanagementsystem.api.model.custom.student.StudentFilterDto;
 import com.studentmanagementsystem.api.service.StudentService;
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "student")
 
 public class StudentController {
@@ -31,7 +32,7 @@ public class StudentController {
 	 * @return Confirmation message indicating saved or updated student details
 	 * @author Vijiyakumar
 	 */	
-	@CrossOrigin
+	
 	@PostMapping("/save")
 	public ResponseEntity<?> saveStudent(@RequestBody StudentDto studentDto){
 		return new ResponseEntity<>(studentService.saveStudent(studentDto),HttpStatus.OK);
@@ -52,7 +53,7 @@ public class StudentController {
 	 * @return Return list of students that match the given filter criteria.
 	 * @author Vijiyakumar
 	 */
-	@CrossOrigin
+	
 	@PostMapping("/list")
 	public ResponseEntity<?> listStudentDetails(@RequestBody StudentFilterDto filterDto){
 		return new ResponseEntity<>( studentService.listStudentDetails(filterDto),HttpStatus.OK);
@@ -67,7 +68,7 @@ public class StudentController {
 	 * @return Updated student details with active/deactive status
 	 * @author Vijiyakumar
 	 */	
-	@CrossOrigin
+	
 	@PostMapping("/status-change")
 	public ResponseEntity<?> activeOrDeactiveByStudentId(@RequestParam String status,@RequestParam Long studentId,@RequestParam Long TeacherId){
 		return new ResponseEntity<>(studentService.activeOrDeactiveByStudentId(status,studentId,TeacherId),HttpStatus.OK);

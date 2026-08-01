@@ -19,6 +19,7 @@ import com.studentmanagementsystem.api.service.StudentCodeService;
 
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "code")
 public class StudentCodeController {
 	
@@ -33,13 +34,13 @@ private StudentCodeService studentCodeService;
  * @return  Confirmation message 
  * @author Vijiyakumar
  */
-@CrossOrigin
+
 @PostMapping
 public ResponseEntity<?> addStudentCode(@RequestBody List<StudentCodeDto> studentCodeDto){
 	return new ResponseEntity<>(studentCodeService.addStudentCode(studentCodeDto),HttpStatus.OK);
 }
 
-@CrossOrigin
+
 @PostMapping
 public ResponseEntity<?> stuCodeList(@RequestParam(required = false) String groupCode){
 	return new ResponseEntity<>(studentCodeService.stuCodeList(groupCode),HttpStatus.OK);

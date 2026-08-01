@@ -13,6 +13,7 @@ import com.studentmanagementsystem.api.service.PDFService;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "report")
 
 public class PDFController {
@@ -26,7 +27,7 @@ public class PDFController {
 	 * @param filterDto Filter criteria for retrieving report.
 	 * @author Vijiyakumar
 	 */
-	@CrossOrigin
+	
 	@PostMapping("mark/summary-report")
     public void downloadMarkSummaryReport(@RequestBody MarkFilterDto filterDto,HttpServletResponse response) throws IOException {  
 		pdfService.downloadMarkSummaryReport(filterDto,response);

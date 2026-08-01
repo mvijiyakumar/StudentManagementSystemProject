@@ -18,6 +18,7 @@ import com.studentmanagementsystem.api.service.DailyAttendanceService;
 
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "daily-attendance")
 
 public class DailyAttendanceController {
@@ -34,7 +35,7 @@ public class DailyAttendanceController {
 	 * @return Confirmation message indicating successful attendance marking
 	 * @author Vijiyakumar
 	 */
-	@CrossOrigin
+	
 	@PostMapping("/save")
 	ResponseEntity<?> saveDailyAttendance(@RequestBody List<DailyAttendanceDto> dailyAttendanceDto) {
 		return new ResponseEntity<>(
@@ -51,7 +52,7 @@ public class DailyAttendanceController {
 	 *         given date
 	 * @author Vijiyakumar
 	 */
-	@CrossOrigin
+	
 	@PostMapping("/list")
 	ResponseEntity<?> dailyAttendanceList(@RequestBody DailyAttendanceFilterDto filterDto) {
 		return new ResponseEntity<>(
@@ -67,7 +68,7 @@ public class DailyAttendanceController {
 	 * @return A list of students' monthly absence records matching the given filters.
 	 * @author Vijiyakumar
 	 */
-	@CrossOrigin
+	
 	@PostMapping("/month-list")
 	ResponseEntity<?> monthlyDailyAttendanceList(@RequestBody DailyAttendanceFilterDto filterDto) {
 		return new ResponseEntity<>(

@@ -14,6 +14,7 @@ import com.studentmanagementsystem.api.model.custom.CommonFilterDto;
 import com.studentmanagementsystem.api.service.QuarterlyAttendanceService;
 
 @RestController
+@CrossOrigin
 @RequestMapping("quarterly")
 
 public class QuarterlyAttendanceController {
@@ -29,7 +30,7 @@ public class QuarterlyAttendanceController {
 	 * @return Return list of quarterli attendance report
 	 * @author Vijiyakumar
 	 */	
-	@CrossOrigin
+	
 	@PostMapping("/list")
 	ResponseEntity<?> quarterlyAttendanceList(@RequestBody CommonFilterDto filterDto){
 		return new ResponseEntity<>(quarterlyAttendanceReportService.quarterlyAttendanceList(filterDto),HttpStatus.OK);

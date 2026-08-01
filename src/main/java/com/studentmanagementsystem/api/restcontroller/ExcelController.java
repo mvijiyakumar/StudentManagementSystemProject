@@ -17,8 +17,9 @@ import com.studentmanagementsystem.api.service.ExcelService;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping(value = "report")
 @CrossOrigin
+@RequestMapping(value = "report")
+
 public class ExcelController {
 	
 	@Autowired
@@ -30,7 +31,7 @@ public class ExcelController {
 	 * @param filterDto Filter criteria for retrieving monthly attendance.
 	 * @author Vijiyakumar
 	 */
-	@CrossOrigin
+	
 	@PostMapping("attendance/monthly-report")
     public void downloadMonthlyAttendanceReport(@RequestBody DailyAttendanceFilterDto filterDto,HttpServletResponse response) throws IOException {  
     		  excelService.downloadMonthlyAttendanceReport(filterDto,response);
@@ -43,7 +44,7 @@ public class ExcelController {
 	 * @param filterDto Filter criteria for retrieving report.
 	 * @author Vijiyakumar
 	 */
-	@CrossOrigin
+	
 	@PostMapping("mark/detail-report")
     public void downloadMarkDetailReport(@RequestBody MarkFilterDto filterDto,HttpServletResponse response) throws IOException {  
     		  excelService.downloadMarkDetailReport(filterDto,response);
