@@ -144,6 +144,7 @@ public class DailyAttendanceServiceImpl implements DailyAttendanceService {
 
 				dailyAttendanceModel = new DailyAttendanceModel();
 
+				Long id = dailyAttendance.getStudentId();
 				StudentModel student = studentModelRepository.findByStudentId(dailyAttendance.getStudentId());
 				dailyAttendanceModel.setStudentModel(student);
 				dailyAttendanceModel.setCreateTeacher(teacher);
@@ -193,6 +194,7 @@ public class DailyAttendanceServiceImpl implements DailyAttendanceService {
 
 		// students who have not been marked attendance ,set default absent
 		if (!attendanceMarekedStudentIdList.isEmpty()) {
+			attendanceDate = dailyAttendanceDtoList.get(0).getAttendanceDate();
 			List<Long> existsStudentId = studentModelRepository.findStudentIdByClassOfStudyAndStatus(classOfStudy,WebServiceUtil.ACTIVE);
 			List<Long> notTakenList = new ArrayList<>(existsStudentId);
 			notTakenList.removeAll(attendanceMarekedStudentIdList);
