@@ -82,10 +82,10 @@ public final class WebServiceUtil {
 	public static final List<Integer>JUNE_END     = Arrays.asList(4, 5, 6);
 	public static final List<Integer>SEP_END  = Arrays.asList(7, 8, 9);
 	public static final List<Integer>DEC_END  = Arrays.asList(10, 11, 12);
-	public static final String QUART_MARCH_AND_YEAR = "03/2025";
-	public static final String QUART_JUNE_AND_YEAR  = "06/2025";
-	public static final String QUART_SEP_AND_YEAR = "09/2025";
-	public static final String QUART_DEC_AND_YEAR  = "12/2025";
+	public static final String QUART_MARCH_AND_YEAR = "03/2026";
+	public static final String QUART_JUNE_AND_YEAR  = "06/2026";
+	public static final String QUART_SEP_AND_YEAR = "09/2026";
+	public static final String QUART_DEC_AND_YEAR  = "12/2026";
 	public static final Integer YEAR = 2025;
 
 //******************** QuarterlyAttendanceReport Message *********************************
