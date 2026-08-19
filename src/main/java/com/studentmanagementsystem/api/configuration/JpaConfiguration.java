@@ -60,8 +60,8 @@ public class JpaConfiguration {
 	        mailSender.setHost("smtp.gmail.com");
 	        mailSender.setPort(587);
 
-	        mailSender.setUsername("vijayakumar2042003@gmail.com"); // change
-	        mailSender.setPassword("awgkkbhqykikrcog");   // app password
+	        mailSender.setUsername("praveenkumar09024@gmail.com"); // change
+	        mailSender.setPassword("uskqyljvjohztgqx");   // app password
 
 	        Properties props = mailSender.getJavaMailProperties();
 	        props.put("mail.transport.protocol", "smtp");

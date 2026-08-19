@@ -160,7 +160,7 @@ public class QuarterlyAttendanceDaoImp implements QuarterlyAttendanceDao {
 		    cq.select(cb.construct(QuarterlyAttendanceDto.class,
 				 
 					quarterlyAttendanceRoot.get("studentModel").get("studentId"),
-					quarterlyAttendanceRoot.get("studentModel"),
+					quarterlyAttendanceRoot.get("studentModel").get("fullName")	,
 					quarterlyAttendanceRoot.get("studentModel").get("classOfStudy"),
 					quarterlyAttendanceRoot.get("studentModel").get("dateOfBirth"),
 					quarterlyAttendanceRoot.get("studentModel").get("phoneNumber"),
