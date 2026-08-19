@@ -86,7 +86,7 @@ public final class WebServiceUtil {
 	public static final String QUART_JUNE_AND_YEAR  = "06/2026";
 	public static final String QUART_SEP_AND_YEAR = "09/2026";
 	public static final String QUART_DEC_AND_YEAR  = "12/2026";
-	public static final Integer YEAR = 2025;
+	public static final Integer YEAR = 2026;
 
 //******************** QuarterlyAttendanceReport Message *********************************
 	

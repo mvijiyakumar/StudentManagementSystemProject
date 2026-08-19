@@ -221,8 +221,8 @@ public class DailyAttendanceServiceImpl implements DailyAttendanceService {
 		}
 
 		// save the student attendance
-		dailyAttendanceRepository.saveAll(dailyAttendanceModelList);
-		dailyAttendanceRepository.flush();
+		dailyAttendanceRepository.saveAllAndFlush(dailyAttendanceModelList);
+//		dailyAttendanceRepository.flush();
 
 		// update the quarterly attendance report
 		quarterlyAttendanceService.findQuarterToUpadte(quarterMonthList);

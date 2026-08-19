@@ -116,8 +116,13 @@ public class QuarterlyAttendanceServiceImpl implements QuarterlyAttendanceServic
 		List<QuarterlyAttendanceDto> quarterlyAttendanceCountList = quartlyAttendanceDao
 				.getAttendanceSummary(quarterMonthEnd);
 
+		if (quarterlyAttendanceCountList.isEmpty()) {
+			logger.info("No attendance records found for quarter : {} , skipping the update", quarterAndYear);
+			return;
+		}
+
 	//	Long totalWorkingDays = quartlyAttendanceDao.getTotalWorkingDays(quarterMonthEnd);
-		
+
 		Long totalWorkingDays = quarterlyAttendanceCountList.get(0).getTotalDaysOfPresent() + quarterlyAttendanceCountList.get(0).getTotalDaysOfAbsents();
 		
 		List<QuarterlyAttendanceModel> quarterlyModelList = new ArrayList<>();
